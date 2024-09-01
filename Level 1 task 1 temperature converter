@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class TemperatureConverter {
+
+    public static void main(String[] args) {
+        Scanner temp = new Scanner(System.in);
+
+        System.out.println("Enter the temperature value:");
+        double temperature = temp.nextDouble();
+
+        System.out.println("Enter the temperature to convert (C or F):");
+        char choose = temp.next().charAt(0);
+
+        switch (choose) {
+            case 'C', 'c' -> {
+                double fahrenheit = (temperature * 9 / 5) + 32;
+                System.out.println(temperature + "C is equal to " + fahrenheit + "F");
+            }
+            case 'F', 'f' -> {
+                double celsius = (temperature - 32) * 5 / 9;
+                System.out.println(temperature + "F is equal to " + celsius + "C");
+            }
+            default ->
+                System.out.println("Invalid. please choose the correct option.");
+        }
+    }
+}
